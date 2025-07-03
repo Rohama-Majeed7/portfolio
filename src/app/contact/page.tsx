@@ -2,9 +2,14 @@
 import React from "react";
 import { Mail, Phone, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
-
+interface ContactItemProps {
+  icon: React.ReactNode;
+  title: string;
+  value: string;
+  href: string;
+}
 // 🔹 Reusable Contact Item Component
-const ContactItem = ({ icon, title, value, href }: any) => (
+const ContactItem = ({ icon, title, value, href }:ContactItemProps) => (
   <Link
     href={href}
     target="_blank"

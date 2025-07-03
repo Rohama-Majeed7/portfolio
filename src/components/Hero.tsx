@@ -55,7 +55,7 @@ const Hero = () => {
         >
           <BlinkText />
           <p className="text-lg leading-relaxed text-[#a1a1aa]">
-            I'm a{" "}
+            I am a{" "}
             <span className="text-[#c084fc] font-semibold">creative developer</span> crafting sleek,
             responsive, and user-centered digital experiences with a passion for visual polish.
           </p>

@@ -4,13 +4,14 @@ import React, { useEffect } from "react";
 import { FaTimes, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { CiLink } from "react-icons/ci";
 import Image from "next/image";
+import Link from "next/link";
 
 const SingleProject = ({ onClose, singleProject, scale, setScale }) => {
   useEffect(() => {
     setTimeout(() => {
       setScale(false);
     }, 10);
-  }, []);
+  }, [setScale]);
 
   return (
     <section className="fixed top-0 left-0 w-full h-full bg-[#0a0a0acc] backdrop-blur-md z-50 flex justify-center items-center p-4">
@@ -54,31 +55,31 @@ const SingleProject = ({ onClose, singleProject, scale, setScale }) => {
 
             <div className="flex gap-4 mt-2 text-2xl">
               {singleProject.link && (
-                <a
+                <Link
                   href={singleProject.link}
                   target="_blank"
                   className="text-[#9f70fd] hover:text-[#ff6ec7] transition-all"
                 >
                   <CiLink />
-                </a>
+                </Link>
               )}
               {singleProject.gitHub && (
-                <a
+                <Link
                   href={singleProject.gitHub}
                   target="_blank"
                   className="text-[#9f70fd] hover:text-[#ff6ec7] transition-all"
                 >
                   <FaGithubSquare />
-                </a>
+                </Link>
               )}
               {singleProject.linkedIn && (
-                <a
+                <Link
                   href={singleProject.linkedIn}
                   target="_blank"
                   className="text-[#9f70fd] hover:text-[#ff6ec7] transition-all"
                 >
                   <FaLinkedin />
-                </a>
+                </Link>
               )}
             </div>
           </div>
