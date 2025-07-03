@@ -5,8 +5,19 @@ import { FaTimes, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { CiLink } from "react-icons/ci";
 import Image from "next/image";
 import Link from "next/link";
-
-const SingleProject = ({ onClose, singleProject, scale, setScale }) => {
+import { Project } from "@/project"; // ✅ Ensure this is the correct import for your Project type
+interface SingleProjectProps {
+  onClose: (value: boolean) => void;
+  singleProject: Project;
+  scale: boolean;
+  setScale: (value: boolean) => void;
+}
+const SingleProject = ({
+  onClose,
+  singleProject,
+  scale,
+  setScale,
+}: SingleProjectProps) => {
   useEffect(() => {
     setTimeout(() => {
       setScale(false);
@@ -44,7 +55,9 @@ const SingleProject = ({ onClose, singleProject, scale, setScale }) => {
 
           {/* Project Details */}
           <div className="flex flex-col gap-6">
-            <h2 className="text-[#f1f1f1] text-2xl font-bold">Project Details</h2>
+            <h2 className="text-[#f1f1f1] text-2xl font-bold">
+              Project Details
+            </h2>
 
             <div>
               <p className="text-[#c084fc] font-semibold mb-1">Description:</p>
