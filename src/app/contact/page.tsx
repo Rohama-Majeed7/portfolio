@@ -34,7 +34,7 @@ const Contact = () => {
       id="contact"
       className="w-full h-[100vh] flex justify-center items-center"
     >
-      <main className="w-[95vw] max-w-[1050px] mx-auto sm:mb-[20px]">
+      <main className="w-[95vw] max-w-[1050px] mx-auto sm:mb-[38px]">
         {/* 🧩 Section Header */}
         <div className="text-center">
           <p className="sm:text-5xl text-4xl font-extrabold text-[#9f70fd] ">

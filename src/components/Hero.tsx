@@ -81,7 +81,7 @@ const Hero = () => {
           <Image
             src={myImg}
             alt="Rohama Majeed"
-            className={`w-[300px] mb-[65px] sm:m-0 sm:max-w-[280px] rounded-2xl border-[1.5px] border-[#9f70fd] shadow-[0_0_30px_#9f70fd50] object-cover transition-transform duration-500 ${
+            className={`w-[300px] mb-[65px] sm:m-0 sm:max-w-[250px] rounded-2xl border-[1.5px] border-[#9f70fd] shadow-[0_0_30px_#9f70fd50] object-cover transition-transform duration-500 ${
               spin ? "animate-spin-slow" : "hover:scale-105"
             }`}
           />
