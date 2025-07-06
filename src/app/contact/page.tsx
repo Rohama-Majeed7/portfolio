@@ -30,21 +30,19 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="flex mt-6 md:mt-0 flex-col gap-12 px-6 py-10 bg-[#0a0a0a] text-white w-full max-w-7xl mx-auto rounded-3xl shadow-2xl relative overflow-hidden"
-    >
-      {/* 🎨 Background Glow Effects */}
-      <div className="absolute -z-10 w-[500px] h-[500px] bg-[#9f70fd]/20 rounded-full blur-[150px] top-[-80px] left-[-100px]" />
-      <div className="absolute -z-10 w-[400px] h-[400px] bg-[#ff6ec7]/20 rounded-full blur-[120px] bottom-[-80px] right-[-100px]" />
-
-
+      className="w-full h-[100vh] flex justify-center items-center">
+<main className="w-full max-w-[1050px] mx-auto">
       {/* 🧩 Section Header */}
-      <div className="text-center relative">
-        <p className="text-[40px] md:text-[60px] font-extrabold text-[#9f70fd] relative z-10">
+      <div className="text-center">
+         <p className="text-5xl font-extrabold text-[#9f70fd]">
+          Contact Me
+        </p>
+        {/* <p className="text-[40px] md:text-[60px] font-extrabold text-[#9f70fd] relative z-10">
           Contact Me
         </p>
         <span className="absolute text-[85px] md:text-[120px] font-extrabold opacity-5 text-white top-[-10px] left-1/2 -translate-x-1/2 select-none">
           Contact
-        </span>
+        </span> */}
       </div>
 
       {/* 📨 Contact Info Cards */}
@@ -74,6 +72,7 @@ const Contact = () => {
           href="https://linkedin.com/in/rohama-majeed-213124282"
         />
       </div>
+      </main>
     </section>
   );
 };

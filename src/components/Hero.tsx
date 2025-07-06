@@ -20,12 +20,8 @@ const Hero = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
-      className="relative md:mt-[10px] mt-[20px] px-6  py-10 max-w-[1150px] rounded-lg mx-auto flex flex-col gap-8 text-[#f1f1f1] overflow-hidden"
+      className="relative  w-full max-w-[1150px] mx-auto flex flex-col  text-[#f1f1f1] "
     >
-      {/* 🔮 Background Glows */}
-      <div className="absolute -z-10 w-[600px] h-[600px] bg-[#9f70fd]/20 rounded-full blur-[160px] top-[-150px] left-[-150px]" />
-      <div className="absolute -z-10 w-[500px] h-[500px] bg-[#ff6ec7]/20 rounded-full blur-[120px] bottom-[-150px] right-[-100px]" />
-
       {/* 🧑‍💻 Name + Title */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -33,45 +29,51 @@ const Hero = () => {
         transition={{ delay: 0.2, duration: 0.8 }}
         className="text-center"
       >
-        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] bg-clip-text text-transparent">
+        <h1 className="text-3xl mt-5 md:text-6xl p-2 font-extrabold bg-gradient-to-r from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] bg-clip-text text-transparent tracking-tight">
           Rohama Majeed
         </h1>
-        <p className="text-lg md:text-xl text-[#a1a1aa] mt-2">Software Engineer</p>
+        <p className="text-lg md:text-xl text-[#a1a1aa] my-3">
+          Software Engineer
+        </p>
       </motion.div>
 
-      {/* 👇 Hero Content Row */}
+      {/* Hero Content */}
       <motion.div
-        className="flex flex-col md:flex-row items-center justify-between gap-10 bg-[#0a0a0a] rounded-3xl shadow-2xl p-4 mb-2 max-w-[1050px]"
+        className="flex flex-col md:flex-row max-w-[1050px] w-full mx-auto items-center justify-between gap-10 bg-[#0a0a0a] rounded-xl shadow-2xl px-6 py-2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4, duration: 1 }}
       >
-        {/* 💬 Text Section */}
+        {/* ✨ Left: Text */}
         <motion.article
-          className="flex flex-col gap-6 md:w-[500px] text-center md:text-left"
+          className="flex flex-col gap-6 md:w-[52%] text-center md:text-left"
           initial={{ x: -60, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
           <BlinkText />
-          <p className="text-lg leading-relaxed text-[#a1a1aa]">
+
+          <p className="text-[17px]  text-[#a1a1aa]">
             I am a{" "}
-            <span className="text-[#c084fc] font-semibold">creative developer</span> crafting sleek,
-            responsive, and user-centered digital experiences with a passion for visual polish.
+            <span className="text-[#c084fc] font-semibold">
+              creative developer
+            </span>{" "}
+            crafting sleek, responsive, and user-centered digital experiences
+            with a passion for detail and polish.
           </p>
 
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-7 py-3 bg-gradient-to-r from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] text-white font-semibold rounded-full shadow-xl hover:shadow-[#ff6ec7]/40 transition duration-300 w-fit mx-auto md:mx-0"
+            className="px-7 py-3 bg-gradient-to-r from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] text-white font-semibold rounded-full shadow-md hover:shadow-[0_0_20px_#ff6ec7] transition duration-300 w-fit mx-auto md:mx-0"
           >
-            🚀 Hire Me
+            Hire Me
           </motion.button>
         </motion.article>
 
-        {/* 🖼️ Image Section */}
+        {/* 🖼️ Right: Image */}
         <motion.article
-          className="md:w-[320px] w-full flex justify-center"
+          className="md:w-[42%] w-full flex justify-center"
           initial={{ rotate: -10, opacity: 0 }}
           animate={{ rotate: 0, opacity: 1 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
@@ -79,7 +81,7 @@ const Hero = () => {
           <Image
             src={myImg}
             alt="Rohama Majeed"
-            className={`max-w-[320px] w-full rounded-2xl border-2 border-[#9f70fd] shadow-[0_0_40px_5px_rgba(159,112,253,0.5)] object-cover transition-transform duration-500 ${
+            className={`w-full max-w-[280px] rounded-2xl border-[1.5px] border-[#9f70fd] shadow-[0_0_30px_#9f70fd50] object-cover transition-transform duration-500 ${
               spin ? "animate-spin-slow" : "hover:scale-105"
             }`}
           />

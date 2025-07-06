@@ -1,66 +1,119 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaBootstrap,
+} from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiExpress,
+  SiMongodb,
+  SiMaterialdesign,
+  SiTypescript,
+} from "react-icons/si";
+import Image from "next/image";
 
-const skills = [
-  { name: "HTML", value: 95 },
-  { name: "CSS", value: 95 },
-  { name: "JavaScript", value: 95 },
-  { name: "React", value: 95 },
-  { name: "Tailwind CSS", value: 95 },
-  { name: "Bootstrap", value: 95 },
-  { name: "Material UI", value: 95 },
-  { name: "Node.js", value: 95 },
-  { name: "Express.js", value: 95 },
-  { name: "MongoDB", value: 95 },
+const frontendSkills = [
+  { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
+  { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
+  { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
+  { name: "TypeScript", icon: <SiTypescript className="text-blue-400" /> },
+  { name: "React", icon: <FaReact className="text-cyan-400" /> },
+  {
+    name: "Next.js",
+    icon: <Image src="/next-icon.svg" alt="Next.js" width={30} height={30} />,
+  },
+  { name: "Tailwind CSS", icon: <SiTailwindcss className="text-sky-400" /> },
+  { name: "Bootstrap", icon: <FaBootstrap className="text-purple-500" /> },
+  {
+    name: "Material UI",
+    icon: <SiMaterialdesign className="text-indigo-400" />,
+  },
 ];
+
+const backendSkills = [
+  { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
+  { name: "Express.js", icon: <SiExpress className="text-gray-300" /> },
+  { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },
+];
+
+const SkillCard = ({
+  name,
+  icon,
+  delay,
+}: {
+  name: string;
+  icon: React.ReactNode;
+  delay: number;
+}) => (
+  <motion.div
+    whileInView={{ opacity: 1, scale: 1 }}
+    initial={{ opacity: 0, scale: 0.8 }}
+    transition={{ duration: 0.4, delay }}
+    viewport={{ once: true }}
+    className="flex flex-col border-2 border-[#9f70fd] items-center justify-center gap-2 bg-[#1a1a1a] text-center rounded-xl p-5 shadow-md hover:shadow-[#9f70fd]/40 hover:scale-105 transition-all duration-300"
+  >
+    <div className="text-4xl">{icon}</div>
+    <p className="text-sm font-medium text-white">{name}</p>
+  </motion.div>
+);
 
 const Skills = () => {
   return (
-    <section
-      id="skills"
-      className="flex flex-col gap-10 py-16 px-6 text-white w-full max-w-7xl mx-auto bg-[#0a0a0a] rounded-3xl shadow-2xl relative overflow-hidden"
-    >
-      {/* 🔮 Background Glow */}
-      <div className="absolute -z-10 w-[500px] h-[500px] bg-[#9f70fd]/20 rounded-full blur-[150px] top-[-80px] left-[-100px]" />
-      <div className="absolute -z-10 w-[400px] h-[400px] bg-[#ff6ec7]/20 rounded-full blur-[120px] bottom-[-80px] right-[-100px]" />
-
-      {/* 🧠 Heading */}
-      <div className="text-center relative">
-        <p className="text-[40px] md:text-[60px] font-extrabold text-[#9f70fd] relative z-10">
+    <section id="skills" className="flex flex-col ">
+      {/* Heading */}
+      <div className="text-center">
+        <p className="text-5xl font-extrabold text-[#9f70fd] mt-5">My Skills</p>
+        {/* <p className="text-[40px] md:text-[60px] font-extrabold text-[#9f70fd] relative z-10">
           My Skills
         </p>
         <span className="absolute text-[90px] md:text-[120px] font-extrabold opacity-5 text-white top-[-10px] left-1/2 -translate-x-1/2 select-none">
           Skills
-        </span>
+        </span> */}
       </div>
+      <main className="flex flex-col w-full max-w-[1050px] mx-auto">
+        {/* Side-by-side Skills Section */}
+        <div className="grid grid-cols-1 w-full">
+          {/* Frontend */}
+          <div className="flex flex-col gap-6">
+            <h3 className="text-2xl font-semibold text-white text-center lg:text-left">
+              Frontend
+            </h3>
+            <div className="grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-6 ">
+              {frontendSkills.map((skill, idx) => (
+                <SkillCard
+                  key={skill.name}
+                  name={skill.name}
+                  icon={skill.icon}
+                  delay={idx * 0.1}
+                />
+              ))}
+            </div>
+          </div>
 
-      {/* 🚀 Skills Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mt-12">
-        {skills.map((skill, idx) => (
-          <motion.div
-            key={idx}
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 40 }}
-            transition={{ duration: 0.5, delay: idx * 0.1 }}
-            viewport={{ once: true }}
-            className="flex flex-col gap-4 p-4 bg-[#1a1a1a] rounded-xl shadow-md hover:shadow-[#9f70fd]/30 transition-all duration-300"
-          >
-            <div className="flex justify-between font-medium text-sm sm:text-base">
-              <span>{skill.name}</span>
-              <span>{skill.value}%</span>
+          {/* Backend */}
+          <div className="flex flex-col gap-6">
+            <h3 className="text-2xl font-semibold text-white text-center lg:text-left mt-5">
+              Backend
+            </h3>
+            <div className="grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-6">
+              {backendSkills.map((skill, idx) => (
+                <SkillCard
+                  key={skill.name}
+                  name={skill.name}
+                  icon={skill.icon}
+                  delay={idx * 0.1}
+                />
+              ))}
             </div>
-            <div className="w-full bg-[#2a2a2a] h-3 rounded-full overflow-hidden">
-              <motion.div
-                className="h-full bg-gradient-to-r from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] rounded-full"
-                initial={{ width: 0 }}
-                whileInView={{ width: `${skill.value}%` }}
-                transition={{ duration: 1.2, ease: "easeInOut" }}
-              />
-            </div>
-          </motion.div>
-        ))}
-      </div>
+          </div>
+        </div>
+      </main>
     </section>
   );
 };

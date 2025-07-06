@@ -7,17 +7,11 @@ const AboutPage = () => {
   return (
     <section
       id="about"
-      className="relative md:mt-[60px] mt-[70px] w-[98vw] max-w-[1150px] mx-auto px-6 py-16 text-white bg-[#0a0a0a] rounded-3xl shadow-2xl overflow-hidden border border-[#9f70fd]/30"
+      className="h-[100vh] flex justify-center items-center w-full "
     >
-      {/* 🔮 Background Glow Effects */}
-      <div className="absolute -z-10 w-[600px] h-[600px] bg-[#9f70fd]/20 rounded-full blur-[160px] top-[-100px] left-[-100px]" />
-      <div className="absolute -z-10 w-[400px] h-[400px] bg-[#ff6ec7]/20 rounded-full blur-[120px] bottom-[-100px] right-[-100px]" />
-
-      {/* 💡 Glowing Border Effect */}
-      <div className="absolute inset-0 rounded-3xl border-2 border-transparent z-[-1] animate-borderGlow bg-[conic-gradient(at_top_left,_#9f70fd,_#ff6ec7,_#9f70fd)] opacity-40" />
 
       {/* 🌟 Inner Content */}
-      <div className="flex flex-col md:flex-row justify-between items-center gap-10">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-10 bg-[#0a0a0a] py-5 px-8 rounded-lg">
         {/* 🖼️ Image */}
         <article className="md:w-[400px] ">
           <Image
@@ -33,9 +27,9 @@ const AboutPage = () => {
             <span className="md:text-[60px] text-[40px] font-bold text-[#9f70fd] z-10 relative">
               About Me
             </span>
-            <span className="absolute text-[100px] md:text-[120px] font-extrabold opacity-5 text-white top-[-20px] left-0 select-none">
+            {/* <span className="absolute text-[100px] md:text-[120px] font-extrabold opacity-5 text-white top-[-20px] left-0 select-none">
               About
-            </span>
+            </span> */}
           </div>
 
           <p className="text-[15px] text-[#a1a1aa] leading-7">

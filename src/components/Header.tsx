@@ -29,14 +29,14 @@ const Header = () => {
   return (
     <>
       {/* Desktop Vertical Icons */}
-      <nav className="hidden md:flex flex-col gap-6 fixed right-4 top-[35%] z-50">
+      <nav className="hidden md:flex flex-col gap-6 fixed right-1 top-[150px] z-50">
         {navItems.map(({ href, icon, label }, idx) => (
           <Link
             key={idx}
             href={href}
-            className="group relative flex items-center gap-3 pr-3"
+            className="group relative flex items-center gap-3 pr-3 "
           >
-            <div className="p-3 rounded-full bg-[#1a1a1a] text-white hover:bg-gradient-to-tr from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] shadow-lg transition-all duration-300 hover:scale-110">
+            <div className="p-3 rounded-full border-2 border-[#9f70fd]  bg-[#1a1a1a] text-white hover:bg-gradient-to-tr from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] shadow-lg transition-all duration-300 hover:scale-110">
               {icon}
             </div>
             <span className="absolute right-14 opacity-0 group-hover:opacity-100 transform translate-x-3 group-hover:translate-x-0 transition-all duration-300 text-white bg-[#1a1a1a] px-3 py-1 text-sm rounded-md whitespace-nowrap shadow-lg">
