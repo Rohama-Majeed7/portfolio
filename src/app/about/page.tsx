@@ -7,11 +7,11 @@ const AboutPage = () => {
   return (
     <section
       id="about"
-      className="h-[100vh] flex justify-center items-center w-full "
+      className="h-[100vh] flex justify-center items-center w-full  mb-[90px] sm:mb-0"
     >
 
       {/* 🌟 Inner Content */}
-      <div className="flex flex-col md:flex-row justify-between items-center gap-10 bg-[#0a0a0a] py-5 px-8 rounded-lg">
+      <div className="flex flex-col w-full max-w-[1050px] mx-auto md:flex-row sm:mt-0 mt-[90px] justify-between items-center gap-10 bg-[#0a0a0a] py-5 px-8 rounded-lg">
         {/* 🖼️ Image */}
         <article className="md:w-[400px] ">
           <Image

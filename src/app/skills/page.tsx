@@ -65,10 +65,10 @@ const SkillCard = ({
 
 const Skills = () => {
   return (
-    <section id="skills" className="flex flex-col ">
+    <section id="skills" className="flex flex-col sm:mt-0 mt-5">
       {/* Heading */}
       <div className="text-center">
-        <p className="text-5xl font-extrabold text-[#9f70fd] mt-5">My Skills</p>
+        <p className="sm:text-5xl text-4xl font-extrabold text-[#9f70fd] sm:mt-[70px] mt-[45px]">My Skills</p>
         {/* <p className="text-[40px] md:text-[60px] font-extrabold text-[#9f70fd] relative z-10">
           My Skills
         </p>
@@ -76,12 +76,12 @@ const Skills = () => {
           Skills
         </span> */}
       </div>
-      <main className="flex flex-col w-full max-w-[1050px] mx-auto">
+      <main className="flex flex-col w-[95vw] max-w-[1050px] mx-auto sm:mb-[90px] mb-[100px]  md:mt-[50px]">
         {/* Side-by-side Skills Section */}
         <div className="grid grid-cols-1 w-full">
           {/* Frontend */}
           <div className="flex flex-col gap-6">
-            <h3 className="text-2xl font-semibold text-white text-center lg:text-left">
+            <h3 className="text-2xl font-semibold text-white text-center sm:mt-0 mt-6 md:text-left">
               Frontend
             </h3>
             <div className="grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-6 ">

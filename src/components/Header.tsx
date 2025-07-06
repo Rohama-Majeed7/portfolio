@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <>
       {/* Desktop Vertical Icons */}
-      <nav className="hidden md:flex flex-col gap-6 fixed right-1 top-[150px] z-50">
+      <nav className="hidden md:flex flex-col gap-6 fixed right-1 bottom-[25%] z-50">
         {navItems.map(({ href, icon, label }, idx) => (
           <Link
             key={idx}
@@ -49,7 +49,7 @@ const Header = () => {
       {/* Hamburger for Mobile */}
       <button
         onClick={() => setIsMobileOpen((prev) => !prev)}
-        className="fixed top-5 right-5 z-[100] md:hidden text-white p-2 bg-[#1a1a1a] rounded-md"
+        className="fixed top-3 right-1 border border-[#9f70fd] z-[100] md:hidden text-white p-2 bg-[#1a1a1a] rounded-md"
       >
         {isMobileOpen ? <X size={28} /> : <Menu size={28} />}
       </button>
@@ -69,9 +69,9 @@ const Header = () => {
                 key={idx}
                 href={href}
                 onClick={() => setIsMobileOpen(false)}
-                className="group relative flex items-center gap-3"
+                className=" relative flex items-center justify-center gap-4 hover:text-[#9f70fd]"
               >
-                <div className="p-3 rounded-full bg-[#1a1a1a] text-white hover:bg-gradient-to-tr from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] shadow-lg transition-all duration-300 hover:scale-110">
+                <div className="p-3 border border-[#9f70fd] rounded-full bg-[#1a1a1a] text-white hover:bg-gradient-to-tr from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] shadow-lg transition-all duration-300 hover:scale-110">
                   {icon}
                 </div>
                 <span className="text-white group-hover:text-[#ff6ec7] text-md transition-all duration-200">

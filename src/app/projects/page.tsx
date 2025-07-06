@@ -21,10 +21,10 @@ const ProjectsPage: React.FC = () => {
   return (
     <section id="projects" className=" bg-[#0a0a0a] text-white">
        
-      <main className="w-full max-w-[1050px] mx-auto flex flex-col gap-4">
+      <main className="w-[95vw] max-w-[1050px] mx-auto flex flex-col gap-4">
        {/* 🧩 Section Title */}
-        <div className="text-center mt-[20px]">
-          <p className=" font-extrabold text-[#9f70fd] text-5xl">
+        <div className="text-center sm:mt-[70px] sm:mb-6 mt-[65px]">
+          <p className=" font-extrabold text-[#9f70fd] sm:text-5xl text-4xl">
             My Projects
           </p>
           {/* <p className="text-[40px] md:text-[60px] font-extrabold text-[#9f70fd] relative z-10">

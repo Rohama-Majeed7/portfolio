@@ -24,21 +24,23 @@ const ResumePage = () => {
   return (
     <section
       id="resume"
-      className="h-[100vh] flex justify-center items-center w-full  text-white "
+      className="h-[100vh] flex justify-center items-center w-full  text-white mb-[120px] sm:mb-0"
     >
-      <main className="flex flex-col bg-[#0a0a0a] gap-7 md:px-6 px-2 md:py-4 py-2 rounded-xl shadow-2xl  max-w-[1050px] w-full mx-auto">
+      <main className="flex sm:mt-0 mt-[90px] flex-col bg-[#0a0a0a] gap-2 md:px-6 px-2 md:py-4 py-2 rounded-xl shadow-2xl  max-w-[1050px] w-full mx-auto">
         {/* 🎓 Heading */}
-        <div className="text-center relative">
-          <p className="text-[40px] md:text-[60px] font-extrabold text-[#9f70fd] relative z-10">
+        <div className="text-center">
+          <p className="sm:text-5xl text-4xl font-extrabold text-[#9f70fd] mt-8 md:mt-3">Resume</p>
+
+          {/* <p className="text-[40px] md:text-[60px] font-extrabold text-[#9f70fd] relative z-10">
             Resume
           </p>
           <span className="absolute text-[90px] md:text-[120px]  font-extrabold opacity-5 text-white top-[-10px] left-1/2 -translate-x-1/2 select-none">
             Resume
-          </span>
+          </span> */}
         </div>
 
         {/* 🗂️ Resume Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full mt-12">
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-6 w-full md:mt-12 mt-5">
           {resumeData.map((item, idx) => (
             <motion.div
               key={idx}
@@ -63,7 +65,7 @@ const ResumePage = () => {
         <a
           href="/cv.pdf"
           download
-          className="px-6 py-3 rounded-full bg-gradient-to-r from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] text-white font-bold shadow-md hover:scale-105 hover:shadow-[#ff6ec7]/40 transition-all duration-300 w-fit mx-auto"
+          className="px-6 py-3 rounded-full bg-gradient-to-r from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] text-white font-bold shadow-md hover:scale-105 hover:shadow-[#ff6ec7]/40 transition-all duration-300 w-fit mx-auto mt-6"
         >
           📄 Download CV
         </a>
