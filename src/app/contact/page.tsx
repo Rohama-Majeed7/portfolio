@@ -4,7 +4,14 @@ import { motion } from "framer-motion";
 import { Mail, Phone, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 
-const ContactItem = ({ icon, title, value, href }) => (
+type ContactItemProps = {
+  icon: React.ReactNode;
+  title: string;
+  value: string;
+  href: string;
+};
+
+const ContactItem = ({ icon, title, value, href }: ContactItemProps) => (
   <Link
     href={href}
     target="_blank"
