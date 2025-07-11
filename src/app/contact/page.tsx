@@ -1,15 +1,10 @@
 "use client";
 import React from "react";
+import { motion } from "framer-motion";
 import { Mail, Phone, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
-interface ContactItemProps {
-  icon: React.ReactNode;
-  title: string;
-  value: string;
-  href: string;
-}
-// 🔹 Reusable Contact Item Component
-const ContactItem = ({ icon, title, value, href }: ContactItemProps) => (
+
+const ContactItem = ({ icon, title, value, href }) => (
   <Link
     href={href}
     target="_blank"
@@ -34,57 +29,52 @@ const Contact = () => {
       id="contact"
       className="w-full h-[100vh] flex justify-center items-center"
     >
-      <main className="w-[95vw] max-w-[1050px] mx-auto sm:mb-[38px]">
-        {/* 🧩 Section Header */}
+      <motion.main
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="w-[95vw] max-w-[1050px] mx-auto sm:mb-[38px]"
+      >
         <div className="text-center">
           <p className="sm:text-5xl text-4xl font-extrabold text-[#9f70fd] ">
             Contact Me
           </p>
-
-          {/* <p className="text-[40px] md:text-[60px] font-extrabold text-[#9f70fd] relative z-10">
-          Contact Me
-        </p>
-        <span className="absolute text-[85px] md:text-[120px] font-extrabold opacity-5 text-white top-[-10px] left-1/2 -translate-x-1/2 select-none">
-          Contact
-        </span> */}
         </div>
-
-        {/* 📨 Contact Info Cards */}
         <div className="w-full max-w-2xl mx-auto space-y-5 mt-12">
-          <ContactItem
-            icon={
-              <Mail className="w-6 h-6 text-[#9f70fd] group-hover:text-black" />
-            }
-            title="Email"
-            value="rohamamajeed4@gmail.com"
-            href="mailto:rohamamajeed4@gmail.com"
-          />
-          <ContactItem
-            icon={
-              <Phone className="w-6 h-6 text-[#9f70fd] group-hover:text-black" />
-            }
-            title="Phone"
-            value="+923250336309"
-            href="tel:+923250336309"
-          />
-          <ContactItem
-            icon={
-              <Github className="w-6 h-6 text-[#9f70fd] group-hover:text-black" />
-            }
-            title="GitHub"
-            value="github.com/Rohama-Majeed7"
-            href="https://github.com/Rohama-Majeed7"
-          />
-          <ContactItem
-            icon={
-              <Linkedin className="w-6 h-6 text-[#9f70fd] group-hover:text-black" />
-            }
-            title="LinkedIn"
-            value="linkedin.com/in/rohama-majeed-213124282"
-            href="https://linkedin.com/in/rohama-majeed-213124282"
-          />
+          <motion.div whileHover={{ scale: 1.05 }}>
+            <ContactItem
+              icon={<Mail className="w-6 h-6 text-[#9f70fd] group-hover:text-black" />}
+              title="Email"
+              value="rohamamajeed4@gmail.com"
+              href="mailto:rohamamajeed4@gmail.com"
+            />
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }}>
+            <ContactItem
+              icon={<Phone className="w-6 h-6 text-[#9f70fd] group-hover:text-black" />}
+              title="Phone"
+              value="+923250336309"
+              href="tel:+923250336309"
+            />
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }}>
+            <ContactItem
+              icon={<Github className="w-6 h-6 text-[#9f70fd] group-hover:text-black" />}
+              title="GitHub"
+              value="github.com/Rohama-Majeed7"
+              href="https://github.com/Rohama-Majeed7"
+            />
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }}>
+            <ContactItem
+              icon={<Linkedin className="w-6 h-6 text-[#9f70fd] group-hover:text-black" />}
+              title="LinkedIn"
+              value="linkedin.com/in/rohama-majeed-213124282"
+              href="https://linkedin.com/in/rohama-majeed-213124282"
+            />
+          </motion.div>
         </div>
-      </main>
+      </motion.main>
     </section>
   );
 };
