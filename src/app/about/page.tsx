@@ -8,7 +8,7 @@ const AboutPage = () => {
   return (
     <section
       id="about"
-      className="h-[100vh] flex justify-center items-center w-full  mb-[90px] sm:mb-0"
+      className="h-[85vh] sm:h-[95vh] flex justify-center items-center w-full  mb-[120px] sm:mb-0"
     >
       {/* 🌟 Inner Content */}
       <motion.div

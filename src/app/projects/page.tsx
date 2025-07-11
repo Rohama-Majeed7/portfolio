@@ -11,11 +11,16 @@ const ProjectsPage: React.FC = () => {
   const [showProject, setShowProject] = useState<boolean>(false);
   const [singleProject, setSingleProject] = useState<Project | null>(null);
   const [scale, setScale] = useState<boolean>(false);
+  const [label, setLabel] = useState<string>("");
 
-  const allProjects = () => setProject(projectsData);
+  const allProjects = () =>{ 
+    setLabel("All")
+    setProject(projectsData)
+  };
 
   const filterProjects = (type: "practical" | "frontend" | "backend") => {
     const newArray = projectsData.filter((pro) => pro.projectType === type);
+    setLabel(type)
     setProject(newArray);
   };
 
@@ -40,7 +45,7 @@ const ProjectsPage: React.FC = () => {
         </div>
 
         {/* 🔘 Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 my-[20px]">
+        <div className="flex  flex-wrap items-center justify-center gap-3 my-[20px]">
           {[
             { label: "All", action: allProjects },
             {
@@ -61,9 +66,7 @@ const ProjectsPage: React.FC = () => {
               onClick={btn.action || undefined}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-4 py-2 rounded-full bg-gradient-to-r from-[#9f70fd] to-[#ff6ec7] text-white font-semibold transition-all duration-300 ${
-                btn.label === "All" ? "hover:scale-105" : "opacity-60 "
-              }`}
+              className="px-4 cursor-pointer py-2 rounded-lg border-1 border-[#9f70fd] hover:bg-[#9f70fd] text-white font-semibold transition-all duration-300 "
             >
               {btn.label}
             </motion.button>
@@ -71,6 +74,7 @@ const ProjectsPage: React.FC = () => {
         </div>
 
         {/* 🖼️ Projects Grid */}
+        <h1 className="text-white font-bold text-3xl text-ceenter border-1 border-b-[#9f70fd] border-l-0 border-r-0 border-t-0">{label.toUpperCase()}</h1>
         <motion.div
           layout
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-[100px]"

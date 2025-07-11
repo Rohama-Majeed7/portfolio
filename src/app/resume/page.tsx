@@ -24,12 +24,12 @@ const ResumePage = () => {
   return (
     <section
       id="resume"
-      className="h-[100vh] flex justify-center items-center w-full  text-white mb-[120px] sm:mb-0"
+      className="h-[85vh] sm:h-[95vh] flex justify-center items-center w-full  text-white mb-[60px] sm:mb-0"
     >
       <main className="flex sm:mt-0 mt-[90px] flex-col bg-[#0a0a0a] gap-2 md:px-6 px-2 md:py-4 py-2 rounded-xl shadow-2xl  max-w-[1050px] w-full mx-auto">
         {/* 🎓 Heading */}
         <div className="text-center">
-          <p className="sm:text-5xl text-4xl font-extrabold text-[#9f70fd] mt-8 md:mt-3">Resume</p>
+          <p className="sm:text-5xl text-4xl font-extrabold text-[#9f70fd]  md:mt-3">Resume</p>
 
           {/* <p className="text-[40px] md:text-[60px] font-extrabold text-[#9f70fd] relative z-10">
             Resume

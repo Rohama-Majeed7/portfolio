@@ -13,6 +13,7 @@ import Prac3Img from "@/projects/prac3.png";
 import Prac4Img from "@/projects/prac4.png";
 import Prac6Img from "@/projects/prac6.png";
 import Prac7Img from "@/projects/ecommerce-stack.png";
+import Prac8Img from "@/projects/post-creation.png";
 
 import type { StaticImageData } from "next/image";
 
@@ -151,7 +152,15 @@ const projects: Project[] = [
     link: "https://ecommerce-frontend-blond-five.vercel.app/",
     gitHub: "https://github.com/Rohama-Majeed7",
     linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "🌟 Mern Full Stack project - project  🌟",
+    desc: "🌟 Mern Full Stack project - Ecommerce Website Project  🌟",
+    projectType: "backend",
+  },
+   {
+    proImg: Prac8Img,
+    link: "https://vercel-frontend-k6z3.vercel.app/",
+    gitHub: "https://github.com/Rohama-Majeed7",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "🌟 Mern Full Stack project - Post Creation Website Project 🌟",
     projectType: "backend",
   },
 ];

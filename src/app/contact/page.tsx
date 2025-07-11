@@ -34,7 +34,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="w-full h-[100vh] flex justify-center items-center"
+      className="w-full h-[85vh] sm:h-[95vh] flex justify-center items-center"
     >
       <motion.main
         initial={{ opacity: 0, y: 50 }}
