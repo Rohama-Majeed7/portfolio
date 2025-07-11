@@ -2,6 +2,7 @@
 import React from "react";
 import myImg from "@/1718159743761-removebg-preview.png";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const AboutPage = () => {
   return (
@@ -9,27 +10,38 @@ const AboutPage = () => {
       id="about"
       className="h-[100vh] flex justify-center items-center w-full  mb-[90px] sm:mb-0"
     >
-
       {/* 🌟 Inner Content */}
-      <div className="flex flex-col w-full max-w-[1050px] mx-auto md:flex-row sm:mt-0 mt-[90px] justify-between items-center gap-10 bg-[#0a0a0a] py-5 px-8 rounded-lg">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="flex flex-col w-full max-w-[1050px] mx-auto md:flex-row sm:mt-0 mt-[90px] justify-between items-center gap-10 bg-[#0a0a0a] py-5 px-8 rounded-lg"
+      >
         {/* 🖼️ Image */}
-        <article className="md:w-[400px] ">
+        <motion.article
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="md:w-[400px] "
+        >
           <Image
             src={myImg}
             alt="About"
             className="w-full object-cover rounded-2xl border-2 border-[#9f70fd] shadow-[0_0_40px_6px_rgba(159,112,253,0.4)] hover:scale-105 transition-transform duration-300"
           />
-        </article>
+        </motion.article>
 
         {/* 📄 Text Content */}
-        <article className="md:w-[520px] flex flex-col gap-6 text-center md:text-left">
+        <motion.article
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="md:w-[520px] flex flex-col gap-6 text-center md:text-left"
+        >
           <div className="relative">
             <span className="md:text-[60px] text-[40px] font-bold text-[#9f70fd] z-10 relative">
               About Me
             </span>
-            {/* <span className="absolute text-[100px] md:text-[120px] font-extrabold opacity-5 text-white top-[-20px] left-0 select-none">
-              About
-            </span> */}
           </div>
 
           <p className="text-[15px] text-[#a1a1aa] leading-7">
@@ -47,11 +59,15 @@ const AboutPage = () => {
             <span className="text-[#ff6ec7]">15+</span> Projects Completed
           </h2>
 
-          <button className="px-6 py-3 rounded-full bg-gradient-to-r from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] text-white font-bold shadow-md hover:scale-105 hover:shadow-[#ff6ec7]/40 transition-all duration-300 w-fit mx-auto md:mx-0">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-6 py-3 rounded-full bg-gradient-to-r from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] text-white font-bold shadow-md hover:scale-105 hover:shadow-[#ff6ec7]/40 transition-all duration-300 w-fit mx-auto md:mx-0"
+          >
             📄 Download CV
-          </button>
-        </article>
-      </div>
+          </motion.button>
+        </motion.article>
+      </motion.div>
     </section>
   );
 };
