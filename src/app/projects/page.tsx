@@ -4,6 +4,7 @@ import projectsData, { Project } from "@/project";
 import { FaAngleDown } from "react-icons/fa";
 import SingleProject from "@/components/SingleProject";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const ProjectsPage: React.FC = () => {
   const [project, setProject] = useState<Project[]>(projectsData);
@@ -20,51 +21,56 @@ const ProjectsPage: React.FC = () => {
 
   return (
     <section id="projects" className=" bg-[#0a0a0a] text-white">
-       
-      <main className="w-[95vw] max-w-[1050px] mx-auto flex flex-col gap-4">
-       {/* 🧩 Section Title */}
+      <motion.main
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="w-[95vw] max-w-[1050px] mx-auto flex flex-col gap-4"
+      >
+        {/* 🧩 Section Title */}
         <div className="text-center sm:mt-[70px] sm:mb-6 mt-[65px]">
-          <p className=" font-extrabold text-[#9f70fd] sm:text-5xl text-4xl">
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className=" font-extrabold text-[#9f70fd] sm:text-5xl text-4xl"
+          >
             My Projects
-          </p>
-          {/* <p className="text-[40px] md:text-[60px] font-extrabold text-[#9f70fd] relative z-10">
-            My Projects
-          </p> */}
-          {/* <span className="absolute text-[85px] md:text-[120px] font-extrabold opacity-5 text-white top-[-10px] left-1/2 -translate-x-1/2 select-none">
-            Projects
-          </span> */}
+          </motion.p>
         </div>
 
         {/* 🔘 Filter Buttons */}
         <div className="flex flex-wrap justify-center gap-3 my-[20px]">
-          <button
-            onClick={allProjects}
-            className="px-4 py-2 rounded-full bg-gradient-to-r from-[#9f70fd] to-[#ff6ec7] text-white font-semibold hover:scale-105 transition-all duration-300"
-          >
-            All
-          </button>
-          <button
-            onClick={() => filterProjects("frontend")}
-            className="px-4 py-2 rounded-full bg-gradient-to-r from-[#9f70fd] to-[#ff6ec7] text-white font-semibold hover:scale-105 transition-all duration-300"
-          >
-            Frontend Projects
-          </button>
-          <button className="px-4 py-2 rounded-full bg-gradient-to-r from-[#9f70fd] to-[#ff6ec7] text-white font-semibold opacity-60 cursor-not-allowed">
-            Backend Projects
-          </button>
-          <button
-            onClick={() => filterProjects("practical")}
-            className="px-4 py-2 rounded-full bg-gradient-to-r from-[#9f70fd] to-[#ff6ec7] text-white font-semibold hover:scale-105 transition-all duration-300"
-          >
-            Practical Projects
-          </button>
+          {[
+            { label: "All", action: allProjects },
+            { label: "Frontend Projects", action: () => filterProjects("frontend") },
+            { label: "Backend Projects", action: null },
+            { label: "Practical Projects", action: () => filterProjects("practical") },
+          ].map((btn, idx) => (
+            <motion.button
+              key={idx}
+              onClick={btn.action || undefined}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`px-4 py-2 rounded-full bg-gradient-to-r from-[#9f70fd] to-[#ff6ec7] text-white font-semibold transition-all duration-300 ${
+                btn.action ? "hover:scale-105" : "opacity-60 cursor-not-allowed"
+              }`}
+            >
+              {btn.label}
+            </motion.button>
+          ))}
         </div>
 
         {/* 🖼️ Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-[100px]">
+        <motion.div
+          layout
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-[100px]"
+        >
           {project.map((pro, index) => (
-            <div
+            <motion.div
               key={index}
+              layout
+              whileHover={{ scale: 1.03 }}
               className="group relative h-[300px] rounded-xl overflow-hidden shadow-md hover:shadow-[#ff6ec7]/30 transition-all duration-300 cursor-pointer border-3 p-2 border-[#9f70fd]"
             >
               <Image
@@ -75,11 +81,11 @@ const ProjectsPage: React.FC = () => {
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                 <p className="text-white font-bold text-lg mb-1">My Project</p>
-                <p className="text-sm text-white mb-4">
-                  Click for more details
-                </p>
+                <p className="text-sm text-white mb-4">Click for more details</p>
                 <FaAngleDown className="text-xl text-[#9f70fd] animate-bounce mb-2" />
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   onClick={() => {
                     setShowProject(true);
                     setScale(true);
@@ -88,12 +94,12 @@ const ProjectsPage: React.FC = () => {
                   className="py-2 px-4 bg-[#1a1a1a] rounded-full text-white hover:bg-white hover:text-black transition-all"
                 >
                   More Details
-                </button>
+                </motion.button>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </main>
+        </motion.div>
+      </motion.main>
       {/* 🧩 Modal for Project Details */}
       {showProject && singleProject && (
         <SingleProject
