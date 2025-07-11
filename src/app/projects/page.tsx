@@ -14,7 +14,7 @@ const ProjectsPage: React.FC = () => {
 
   const allProjects = () => setProject(projectsData);
 
-  const filterProjects = (type: "practical" | "frontend") => {
+  const filterProjects = (type: "practical" | "frontend" | "backend") => {
     const newArray = projectsData.filter((pro) => pro.projectType === type);
     setProject(newArray);
   };
@@ -43,17 +43,25 @@ const ProjectsPage: React.FC = () => {
         <div className="flex flex-wrap justify-center gap-3 my-[20px]">
           {[
             { label: "All", action: allProjects },
-            { label: "Frontend Projects", action: () => filterProjects("frontend") },
-            { label: "Backend Projects", action: null },
-            { label: "Practical Projects", action: () => filterProjects("practical") },
+            {
+              label: "Frontend Projects",
+              action: () => filterProjects("frontend"),
+            },
+            {
+              label: "Backend Projects",
+              action: () => filterProjects("backend"),
+            },
+            {
+              label: "Practical Projects",
+              action: () => filterProjects("practical"),
+            },
           ].map((btn, idx) => (
             <motion.button
               key={idx}
               onClick={btn.action || undefined}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-4 py-2 rounded-full bg-gradient-to-r from-[#9f70fd] to-[#ff6ec7] text-white font-semibold transition-all duration-300 ${
-                btn.action ? "hover:scale-105" : "opacity-60 cursor-not-allowed"
+              className={`px-4 py-2 rounded-full bg-gradient-to-r from-[#9f70fd] to-[#ff6ec7] text-white font-semibold transition-all duration-300  "hover:scale-105" : "opacity-60 "
               }`}
             >
               {btn.label}
@@ -81,7 +89,9 @@ const ProjectsPage: React.FC = () => {
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                 <p className="text-white font-bold text-lg mb-1">My Project</p>
-                <p className="text-sm text-white mb-4">Click for more details</p>
+                <p className="text-sm text-white mb-4">
+                  Click for more details
+                </p>
                 <FaAngleDown className="text-xl text-[#9f70fd] animate-bounce mb-2" />
                 <motion.button
                   whileHover={{ scale: 1.05 }}

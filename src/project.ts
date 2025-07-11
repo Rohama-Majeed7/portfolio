@@ -12,6 +12,8 @@ import Prac2Img from "@/projects/prac2.png";
 import Prac3Img from "@/projects/prac3.png";
 import Prac4Img from "@/projects/prac4.png";
 import Prac6Img from "@/projects/prac6.png";
+import Prac7Img from "@/projects/ecommerce-stack.png";
+
 import type { StaticImageData } from "next/image";
 
 export interface Project {
@@ -20,7 +22,7 @@ export interface Project {
   gitHub: string;
   linkedIn: string;
   desc: string;
-  projectType: "practical" | "frontend";
+  projectType: "practical" | "frontend" | "backend";
 }
 
 const projects: Project[] = [
@@ -143,6 +145,14 @@ const projects: Project[] = [
     linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
     desc: "🌟 Practical project - project 5 🌟",
     projectType: "practical",
+  },
+    {
+    proImg: Prac7Img,
+    link: "https://ecommerce-frontend-blond-five.vercel.app/",
+    gitHub: "https://github.com/Rohama-Majeed7",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "🌟 Mern Full Stack project - project  🌟",
+    projectType: "backend",
   },
 ];
 
