@@ -61,7 +61,9 @@ const ProjectsPage: React.FC = () => {
               onClick={btn.action || undefined}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-4 py-2 rounded-full bg-gradient-to-r from-[#9f70fd] to-[#ff6ec7] text-white font-semibold transition-all duration-300  hover:scale-105 opacity-60 "
+              className={`px-4 py-2 rounded-full bg-gradient-to-r from-[#9f70fd] to-[#ff6ec7] text-white font-semibold transition-all duration-300 ${
+                btn.label === "All" ? "hover:scale-105" : "opacity-60 "
+              }`}
             >
               {btn.label}
             </motion.button>
